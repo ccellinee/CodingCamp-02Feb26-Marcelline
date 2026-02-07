@@ -3,20 +3,60 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device=width, initial-scale=1.0">
-    <title>--TO DO LIST--</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO</title>
 
     <!---CSS Eksternal--->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!---TailWind CSS CDN-->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 
 <body>
     <!---Header Content-->
-    <Header></Header>
+    <header>
+        <h1 class="text-2xl font-extrabold pb-4">THINGS TO DO</h1>
+    </header>
 
     <!----Main Content-->
-    <main></main>
+    <main>
+        <!--Form Selection-->
+        <section>
+            <form class="flex gap-2">
+                <!--To Do Input-->
+                <input class= "border p-2 rounded" type="text" id="todo" placeholder="What need to be done?">
+                <!--Deadline-->
+                <input class = "border p-2 rounded" type="date" id="deadline" placeholder="due date">
+                <!---Add Button-->
+                <button class="bg-yellow-600 text-indigo-50 text-xl font-bold border px-3 rounded" onclick="addTodo()" type="button">+</button>
+            </form>
+         </section>
 
+        <!--Action Section-->
+        <section class="flex pt-2 justify-between mt-1">
+            <!--CLEAR-->
+            <button class="bg-red-800 text-indigo-50 text-sm font-semibold border py-1.5 px-3 rounded" onclick="deleteAll()">Clear list</button>
+
+            <!--FILTER-->
+            <button class="bg-yellow-600 text-indigo-50 border py-1.5 px-3 rounded" onclick="filterTools()">Filter</button>
+
+        </section>
+        <!--ToDo List Section-->
+        <section class="mt-7">
+            <header>
+                <h2 class="text-3xl font-extrabold">Task List</h2>
+            </header>
+            <ul id="todo-list" class="mt-2">
+                <li class="italic">No tasks yet - add one above</li>
+            </ul>
+        </section>  
+    </main>
+
+    <!--Footer content-->    
+    <footer class="mt-12">
+        <p class="text-center text-gray-400">©2026 Cell's Todo App</p>
+    </footer>
     <!---Javascript External--->
     <script src="js/script.js">
     </script>
